@@ -41,7 +41,13 @@ export default function Navbar() {
     <header className={styles.header}>
       <nav className={styles.navbar}>
         <Link href="/" className={styles.logo} onClick={closeMenu}>
-          <Image src="/Logo.png" alt="Logo" width={150} height={150} />
+          <Image
+            src="/Logo.png"
+            alt="Logo"
+            width={100}
+            height={100}
+            loading="eager"
+          />
 
           <span className={styles.logoText}>
             <strong>AV Informatique</strong>
