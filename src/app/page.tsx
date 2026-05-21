@@ -1,21 +1,27 @@
 import Link from "next/link";
 import styles from "../styles/page.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faWrench,
+  faGraduationCap,
+  faGlobe,
+} from "@fortawesome/free-solid-svg-icons";
 
 const services = [
   {
-    icon: "🔧",
+    icon: faWrench,
     title: "Dépannage",
     description:
       "PC lent, virus, panne matérielle, récupération de données et résolution de problèmes informatiques.",
   },
   {
-    icon: "🌐",
+    icon: faGlobe,
     title: "Installation",
     description:
       "Réseau Wi-Fi, configuration Box, imprimantes, caméras, logiciels et nouveaux équipements.",
   },
   {
-    icon: "🎓",
+    icon: faGraduationCap,
     title: "Formation",
     description:
       "Prise en main PC, internet, messagerie, tablette, smartphone et accompagnement numérique.",
@@ -81,7 +87,12 @@ export default function HomePage() {
         <div className={styles.servicesGrid}>
           {services.map((service) => (
             <article key={service.title} className={styles.serviceCard}>
-              <span className={styles.serviceIcon}>{service.icon}</span>
+              <span className={styles.serviceIcon}>
+                <FontAwesomeIcon
+                  icon={service.icon}
+                  className={styles.fontIcon}
+                />
+              </span>
 
               <h3>{service.title}</h3>
 
